@@ -50,7 +50,7 @@ export default function EditarCursoView() {
                 showConfirmButton:false,
                 timer:2500
             })
-            history.push('/')
+            history.push('/admin')
      
 
     }

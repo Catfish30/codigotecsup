@@ -56,7 +56,7 @@ export default function CursosViews() {
             
             <h2 className="py-2">Cursos de la Institucion</h2>
 
-            <Link className="btn btn-dark btn-md ms-5 my-3 " to='/crear'> Nuevo Curso </Link>
+            <Link className="btn btn-dark btn-md ms-5 my-3 " to='/admin/crear'> Nuevo Curso </Link>
 
             <Row xs={1} md={3} className="g-4" align="center">
             {cursos.map((curso,i) => (
@@ -70,8 +70,8 @@ export default function CursosViews() {
                             </Card.Text>
                             <div className="row justify-content-center px-2">
                                 <div className="col-12">
-                                    <Link className="btn btn-primary btn-sm " to={`/cursos/${curso.curso_id}`} >Ingresar</Link>
-                                    <Link className="btn btn-warning btn-sm mx-2" to={`/editar/${curso.curso_id}`}> Editar </Link>
+                                    <Link className="btn btn-primary btn-sm " to={`/admin/cursos/${curso.curso_id}`} >Ingresar</Link>
+                                    <Link className="btn btn-warning btn-sm mx-2" to={`/admin/editar/${curso.curso_id}`}> Editar </Link>
                                     <button className="btn btn-danger btn-sm mx-1 my-2" id={`${curso.curso_id}`} onClick={(e) => {deleteCurso(e)}} > Eliminar </button>
                                 </div>
                             </div>

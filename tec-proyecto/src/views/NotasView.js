@@ -129,7 +129,7 @@ export default function NotasView() {
             <div className="row justify-content-center ">
                 
                 <div className="col-3">
-                    <Link className="btn btn-primary ms-5" to={`/`}>
+                    <Link className="btn btn-primary ms-5" to={`/admin`}>
                         Regresar
                     </Link>
                 </div>
