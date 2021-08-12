@@ -8,18 +8,20 @@ export default function NavTop() {
         <div>
             <Navbar bg="light" expand="lg">
             <Container>
+            <Navbar.Brand>
                 <Image src={logo} rounded style={{height:'50px'}} />
+            </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="ps-4">
-                <Nav>
+                <Nav className="me-auto">
                     <Nav.Item>
                         <Link to='/' className='nav-link'>
                             Inicio
                         </Link>
                     </Nav.Item>                
                 </Nav>
-                </Navbar.Collapse>
                 <Button variant="danger">Salir</Button>
+                </Navbar.Collapse>
             </Container>
             </Navbar>
         </div>
