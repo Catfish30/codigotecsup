@@ -73,7 +73,7 @@ export default function NotasViewAlum() {
             </div>
             <div className="row justify-content-end">
                 <div className="col-5">
-                    <Link className="btn btn-primary" to={`/alumnos`}>
+                    <Link className="btn btn-primary" to={`/login/alumnos`}>
                         Regresar
                     </Link>
                 </div>

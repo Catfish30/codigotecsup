@@ -34,7 +34,7 @@ export default function CrearCursoView() {
                 showConfirmButton:false,
                 timer:2500
             })
-            history.push('/admin')
+            history.push('/login/admin')
         } catch (error) {
             console.error(error)
         }

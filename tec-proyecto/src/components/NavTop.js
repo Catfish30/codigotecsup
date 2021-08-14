@@ -2,9 +2,36 @@ import React from 'react'
 import { Navbar,Container,Nav,Image,Button } from 'react-bootstrap'
 import logo from '../assets/logo-vizcaya.png'
 import { Link } from 'react-router-dom'
+import Cookies  from 'universal-cookie'
+import { Component } from 'react'
 
-export default function NavTop() {
+
+const cookies = new Cookies();
+
+class NavTop extends Component {
+
+
+    cerrarSesion=()=>{
+        cookies.remove('id', {path: "/"});
+        cookies.remove('apellido_paterno', {path: "/"});
+        cookies.remove('apellido_materno', {path: "/"});
+        cookies.remove('nombre', {path: "/"});
+        cookies.remove('username', {path: "/"});
+        window.location.href='./';
+    }
+
+    
+    // componentDidMount() {
+    //     if(!cookies.get('username')){
+    //         window.location.href="/login/alumnos";
+    //     }
+    // }
+
+
+render() {
     return (
+
+
         <div>
             <Navbar bg="light" expand="lg">
             <Container>
@@ -18,12 +45,20 @@ export default function NavTop() {
                         <Link to='/' className='nav-link'>
                             Inicio
                         </Link>
-                    </Nav.Item>                
+                    </Nav.Item>     
+                    <Nav.Item>
+                        <Link to='/login' className='nav-link'>
+                            Alumnos
+                        </Link>
+                    </Nav.Item>             
                 </Nav>
-                <Button variant="danger">Salir</Button>
+                <Button variant="danger" onClick={()=>this.cerrarSesion()}>Salir</Button>
                 </Navbar.Collapse>
             </Container>
             </Navbar>
         </div>
     )
 }
+}
+
+export default NavTop

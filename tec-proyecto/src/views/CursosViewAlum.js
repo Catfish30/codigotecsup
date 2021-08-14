@@ -42,7 +42,7 @@ export default function CursosViewAlum() {
                             <Card.Text>
                             Docente: {curso.curso_docente}
                             </Card.Text>
-                            <Link className="btn btn-primary btn-sm " to={`/alumnos/cursos/${curso.curso_id}`} >Ingresar</Link>
+                            <Link className="btn btn-primary btn-sm " to={`/login/alumnos/cursos/${curso.curso_id}`} >Ingresar</Link>
                         </Card.Body>
                         </Card>
                 </Col>
