@@ -5,6 +5,9 @@ import { Row,Col,Card } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Swal from 'sweetalert2'
 
+import NavTop  from "../components/NavTop";
+import FooterPage from "../components/FooterPage";
+
 export default function CursosViews() {
 
     const [cursos,setCursos] = useState([])
@@ -51,36 +54,39 @@ export default function CursosViews() {
 
     
     return (
+        <div>
+            <NavTop />
+            <div className="container" style={{minHeight:'74vh'}}>
+                
+                <h2 className="py-2">Cursos de la Institucion</h2>
 
-        <div className="container" style={{minHeight:'74vh'}}>
-            
-            <h2 className="py-2">Cursos de la Institucion</h2>
+                <Link className="btn btn-dark btn-md ms-5 my-3 " to='/login/admin/crear'> Nuevo Curso </Link>
 
-            <Link className="btn btn-dark btn-md ms-5 my-3 " to='/login/admin/crear'> Nuevo Curso </Link>
-
-            <Row xs={1} md={3} className="g-4" align="center">
-            {cursos.map((curso,i) => (
-                <Col key={i}>
-                    <Card style={{ width: '14rem' }} >
-                        <Card.Img variant="top" style={{height:"180px", objectFit:'cover'}} src={curso.curso_imagen} />
-                        <Card.Body style={{minHeight:"210px"}}>
-                            <Card.Title>{curso.curso_nombre}</Card.Title>
-                            <Card.Text>
-                            Docente: {curso.curso_docente}
-                            </Card.Text>
-                            <div className="row justify-content-center px-2">
-                                <div className="col-12">
-                                    <Link className="btn btn-primary btn-sm " to={`/login/admin/cursos/${curso.curso_id}`} >Ingresar</Link>
-                                    <Link className="btn btn-warning btn-sm mx-2" to={`/login/admin/editar/${curso.curso_id}`}> Editar </Link>
-                                    <button className="btn btn-danger btn-sm mx-1 my-2" id={`${curso.curso_id}`} onClick={(e) => {deleteCurso(e)}} > Eliminar </button>
+                <Row xs={1} md={3} className="g-4" align="center">
+                {cursos.map((curso,i) => (
+                    <Col key={i}>
+                        <Card style={{ width: '14rem' }} >
+                            <Card.Img variant="top" style={{height:"180px", objectFit:'cover'}} src={curso.curso_imagen} />
+                            <Card.Body style={{minHeight:"210px"}}>
+                                <Card.Title>{curso.curso_nombre}</Card.Title>
+                                <Card.Text>
+                                Docente: {curso.curso_docente}
+                                </Card.Text>
+                                <div className="row justify-content-center px-2">
+                                    <div className="col-12">
+                                        <Link className="btn btn-primary btn-sm " to={`/login/admin/cursos/${curso.curso_id}`} >Ingresar</Link>
+                                        <Link className="btn btn-warning btn-sm mx-2" to={`/login/admin/editar/${curso.curso_id}`}> Editar </Link>
+                                        <button className="btn btn-danger btn-sm mx-1 my-2" id={`${curso.curso_id}`} onClick={(e) => {deleteCurso(e)}} > Eliminar </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </Card.Body>
-                        </Card>
-                </Col>
-            ))}
-            </Row>
+                            </Card.Body>
+                            </Card>
+                    </Col>
+                ))}
+                </Row>
 
+            </div>
+            <FooterPage />
         </div>
     )
 }

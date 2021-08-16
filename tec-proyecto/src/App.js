@@ -8,11 +8,11 @@ export default function App() {
   return (
     <div>
       <Router>
-        <NavTop />
+        
         <Switch>
           <Routes />
         </Switch>
-        <FooterPage />
+        
       </Router>
     </div>
   )

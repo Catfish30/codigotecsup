@@ -4,7 +4,7 @@ import "../styles/styles.css";
 import axios from "axios";
 import md5 from "md5";
 import Cookies from 'universal-cookie';
-
+import NavTop from "../components/NavTop";
 
 const baseUrl = "http://localhost:3001/usuarios";
 const cookies = new Cookies();
@@ -70,33 +70,36 @@ class LoginView extends Component {
 
   render() {
     return (
-      <div className="containerPrincipal">
-        <div className="containerSecundario">
-          <div className="form-group">
-            <label>Usuario: </label>
-            <br />
-            <input
-              type="text"
-              className="form-control"
-              name="username"
-              onChange={this.handleChange}
-            />
-            <br />
-            <label>Contraseña: </label>
-            <br />
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              onChange={this.handleChange}
-            />
-            <br />
-            <button
-              className="btn btn-primary"
-              onClick={() => this.iniciarSesion()}
-            >
-              Iniciar Sesión
-            </button>
+      <div>
+        <NavTop />
+        <div className="containerPrincipal">
+          <div className="containerSecundario">
+            <div className="form-group">
+              <label>Usuario: </label>
+              <br />
+              <input
+                type="text"
+                className="form-control"
+                name="username"
+                onChange={this.handleChange}
+              />
+              <br />
+              <label>Contraseña: </label>
+              <br />
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                onChange={this.handleChange}
+              />
+              <br />
+              <button
+                className="btn btn-primary"
+                onClick={() => this.iniciarSesion()}
+              >
+                Iniciar Sesión
+              </button>
+            </div>
           </div>
         </div>
       </div>

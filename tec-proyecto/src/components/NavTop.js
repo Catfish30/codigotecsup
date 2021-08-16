@@ -52,7 +52,8 @@ render() {
                         </Link>
                     </Nav.Item>             
                 </Nav>
-                <Button variant="danger" onClick={()=>this.cerrarSesion()}>Salir</Button>
+                <Link className="btn btn-danger" to='/login' >Ingresar</Link>
+                <Button className="btn btn-danger ms-1" onClick={()=>this.cerrarSesion()} >Salir</Button>
                 </Navbar.Collapse>
             </Container>
             </Navbar>

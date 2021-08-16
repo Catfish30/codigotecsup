@@ -10,6 +10,8 @@ import pic5 from "../assets/pic5.jpg";
 import pic6 from "../assets/pic6.jpg";
 import logo from "../assets/logo-vizcaya.png";
 // import board from "../assets/pizarra.jpg";
+import NavTop  from "../components/NavTop";
+import FooterPage from "../components/FooterPage";
 
 const img = {
   position: "relative",
@@ -19,6 +21,7 @@ const img = {
 export default function MainView() {
   return (
     <div>
+        <NavTop />
         <Carousel>
             <Carousel.Item>
                 <img className="d-block w-100" src={pic1} alt="First slide" />
@@ -140,6 +143,7 @@ export default function MainView() {
         </div>
         {/* <!-- Grid container --> */}
       </footer>
+      <FooterPage />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import logo from "../assets/logo-vizcaya.png";
 export default function FooterPage() {
   return (
     
-      <footer className="text-center text-black" style={{backgroundColor: "#F8F9FA",}}>
+      <footer className="text-center text-black mt-3" style={{backgroundColor: "#F8F9FA",}}>
   {/* <!-- Grid container --> */}
   
    
