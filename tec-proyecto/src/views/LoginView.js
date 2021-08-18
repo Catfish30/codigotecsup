@@ -5,6 +5,7 @@ import axios from "axios";
 import md5 from "md5";
 import Cookies from 'universal-cookie';
 import NavTop from "../components/NavTop";
+import { Link } from "react-router-dom";
 
 const baseUrl = "http://localhost:3001/usuarios";
 const cookies = new Cookies();

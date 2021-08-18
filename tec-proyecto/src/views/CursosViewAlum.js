@@ -5,7 +5,6 @@ import { Card, Row,Col } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 
 import { obtenerCursos } from "../services/CursoServiceAlum";
-
 import NavTop  from "../components/NavTop";
 import FooterPage from "../components/FooterPage";
 

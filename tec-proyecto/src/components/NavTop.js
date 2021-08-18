@@ -8,16 +8,18 @@ import { Component } from 'react'
 
 const cookies = new Cookies();
 
+
 class NavTop extends Component {
 
 
     cerrarSesion=()=>{
+        
         cookies.remove('id', {path: "/"});
         cookies.remove('apellido_paterno', {path: "/"});
         cookies.remove('apellido_materno', {path: "/"});
         cookies.remove('nombre', {path: "/"});
         cookies.remove('username', {path: "/"});
-        window.location.href='./';
+
     }
 
     
@@ -27,8 +29,23 @@ class NavTop extends Component {
     //     }
     // }
 
+    mostrarSalir= () => {
+
+        let x = document.getElementById('salir').style.display
+        if( x === 'none'){
+            document.getElementById('salir').style.display = "block"
+            document.getElementById('ingresar').style.display = "none"
+        }else{
+            document.getElementById('salir').style.display = "none"
+            document.getElementById('ingresar').style.display = "block"
+        }
+        
+    }
 
 render() {
+
+    
+
     return (
 
 
@@ -52,8 +69,8 @@ render() {
                         </Link>
                     </Nav.Item>             
                 </Nav>
-                <Link className="btn btn-danger" to='/login' >Ingresar</Link>
-                <Button className="btn btn-danger ms-1" onClick={()=>this.cerrarSesion()} >Salir</Button>
+                <Link className="btn btn-danger ingresar" id="ingresar" onClick={()=>this.mostrarSalir() } to='/login'>Ingresar</Link>
+                <Link className="btn btn-danger ms-1" id="salir"   onClick={()=>this.cerrarSesion()} to='/'>Salir</Link>
                 </Navbar.Collapse>
             </Container>
             </Navbar>
