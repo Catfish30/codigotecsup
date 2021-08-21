@@ -5,8 +5,15 @@ import { Row,Col,Card } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-import NavTop  from "../components/NavTop";
+import { Navbar,Nav,Container,Image } from 'react-bootstrap'
+import logo from '../assets/logo-vizcaya.png'
+
 import FooterPage from "../components/FooterPage";
+
+import Cookies  from 'universal-cookie'
+
+const cookies = new Cookies();
+
 
 export default function CursosViews() {
 
@@ -52,10 +59,44 @@ export default function CursosViews() {
         }
     }
 
+    const cerrarSesion = () => {
+        
+        cookies.remove('id', {path: "/"});
+        cookies.remove('apellido_paterno', {path: "/"});
+        cookies.remove('apellido_materno', {path: "/"});
+        cookies.remove('nombre', {path: "/"});
+        cookies.remove('username', {path: "/"});
+
+    }
+
+
     
     return (
+       
         <div>
-            <NavTop />
+            
+            <Navbar bg="light" expand="lg">
+            <Container>
+            <Navbar.Brand>
+                <Image src={logo} rounded style={{height:'50px'}} />
+            </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav" className="ps-4">
+                <Nav className="me-auto">
+                    <Nav.Item>
+                        <Link to='/' className='nav-link'>
+                            Inicio
+                        </Link>
+                    </Nav.Item>     
+            
+                </Nav>
+                
+                <Link className="btn btn-danger ms-1" onClick={()=>{cerrarSesion()}} to='/'>Salir</Link>
+                </Navbar.Collapse>
+            </Container>
+            </Navbar>
+
+
             <div className="container" style={{minHeight:'74vh'}}>
                 
                 <h2 className="py-2">Cursos de la Institucion</h2>

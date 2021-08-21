@@ -11,7 +11,7 @@ const cookies = new Cookies();
 
 class NavTop extends Component {
 
-
+    
     cerrarSesion=()=>{
         
         cookies.remove('id', {path: "/"});
@@ -29,18 +29,18 @@ class NavTop extends Component {
     //     }
     // }
 
-    mostrarSalir= () => {
+    // mostrarSalir= () => {
 
-        let x = document.getElementById('salir').style.display
-        if( x === 'none'){
-            document.getElementById('salir').style.display = "block"
-            document.getElementById('ingresar').style.display = "none"
-        }else{
-            document.getElementById('salir').style.display = "none"
-            document.getElementById('ingresar').style.display = "block"
-        }
+    //     let x = document.getElementById('salir').style.display
+    //     if( x === 'none'){
+    //         document.getElementById('salir').style.display = "block"
+    //         document.getElementById('ingresar').style.display = "none"
+    //     }else{
+    //         document.getElementById('salir').style.display = "none"
+    //         document.getElementById('ingresar').style.display = "block"
+    //     }
         
-    }
+    // }
 
 render() {
 
@@ -63,14 +63,10 @@ render() {
                             Inicio
                         </Link>
                     </Nav.Item>     
-                    <Nav.Item>
-                        <Link to='/login' className='nav-link'>
-                            Alumnos
-                        </Link>
-                    </Nav.Item>             
+            
                 </Nav>
-                <Link className="btn btn-danger ingresar" id="ingresar" onClick={()=>this.mostrarSalir() } to='/login'>Ingresar</Link>
-                <Link className="btn btn-danger ms-1" id="salir"   onClick={()=>this.cerrarSesion()} to='/'>Salir</Link>
+                <Link className="btn btn-danger ingresar" id="ingresar"  to='/login'>Ingresar</Link>
+                <Link className="btn btn-danger ms-1" id="salir" style={{display:'none'}}  onClick={()=>this.cerrarSesion()} to='/'>Salir</Link>
                 </Navbar.Collapse>
             </Container>
             </Navbar>

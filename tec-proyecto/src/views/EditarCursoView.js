@@ -5,6 +5,7 @@ import { obtenerCursoPorId,editarCurso,subirArchivo } from '../services/cursosSe
 import FormCurso from '../components/FormCurso'
 import Swal from 'sweetalert2'
 import { useHistory } from 'react-router'
+import NavTop2 from '../components/NavTop2'
 
 let imagen
 
@@ -68,11 +69,14 @@ export default function EditarCursoView() {
 
 
     return (
-        <div className="container p-4" style={{minHeight:'74vh'}}>
-            <div className="row justify-content-center">
-                <div>
-                <h1 className="py-3 text-center" >Editar Curso</h1>
-                    <FormCurso value={value} actualizarInput={actualizarInput} manejarSubmit={manejarSubmit} manejarImagen={manejarImagen} />
+        <div>
+            <NavTop2 />
+            <div className="container p-4" style={{minHeight:'74vh'}}>
+                <div className="row justify-content-center">
+                    <div>
+                    <h1 className="py-3 text-center" >Editar Curso</h1>
+                        <FormCurso value={value} actualizarInput={actualizarInput} manejarSubmit={manejarSubmit} manejarImagen={manejarImagen} />
+                    </div>
                 </div>
             </div>
         </div>

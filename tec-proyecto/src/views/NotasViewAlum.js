@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { obtenerNota } from "../services/NotaServiceAlum";
 
-
+import NavTop2 from '../components/NavTop2';
 
 export default function NotasViewAlum() {
 
@@ -38,47 +38,50 @@ export default function NotasViewAlum() {
     }
 
     return (
-        <div className='container p-4' style={{minHeight:'74vh'}}>
-           <h2 className="text-center">Notas</h2>
-           <div className="row justify-content-center" >
-            <div className="col-5" >
-                <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Tarea</th>
-                                <th>Nota</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> Nota 1 </td>
-                                <td> {notas.nota_1} </td>
-                            </tr>
-                            <tr>  
-                                <td> Nota 2 </td>
-                                <td> {notas.nota_2} </td>
-                            </tr>
-                            <tr>
-                                <td> Nota 3 </td>
-                                <td> {notas.nota_3} </td>
-                            </tr>
-                            <tr>
-                                <td> Nota 4 </td>
-                                <td> {notas.nota_4} </td>
-                            </tr>
-                        </tbody>
-                        <h5 className="py-3"> Promedio: {promedio()} </h5>
-                    </table>
-            </div>
-            </div>
-            <div className="row justify-content-end">
-                <div className="col-5">
-                    <Link className="btn btn-primary" to={`/login/alumnos`}>
-                        Regresar
-                    </Link>
+        <div>
+            <NavTop2 />
+            <div className='container p-4' style={{minHeight:'74vh'}}>
+            <h2 className="text-center">Notas</h2>
+            <div className="row justify-content-center" >
+                <div className="col-5" >
+                    <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Tarea</th>
+                                    <th>Nota</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> Nota 1 </td>
+                                    <td> {notas.nota_1} </td>
+                                </tr>
+                                <tr>  
+                                    <td> Nota 2 </td>
+                                    <td> {notas.nota_2} </td>
+                                </tr>
+                                <tr>
+                                    <td> Nota 3 </td>
+                                    <td> {notas.nota_3} </td>
+                                </tr>
+                                <tr>
+                                    <td> Nota 4 </td>
+                                    <td> {notas.nota_4} </td>
+                                </tr>
+                            </tbody>
+                            <h5 className="py-3"> Promedio: {promedio()} </h5>
+                        </table>
                 </div>
+                </div>
+                <div className="row justify-content-end">
+                    <div className="col-5">
+                        <Link className="btn btn-primary" to={`/login/alumnos`}>
+                            Regresar
+                        </Link>
+                    </div>
+                </div>
+    
             </div>
- 
         </div>
     )
 }
