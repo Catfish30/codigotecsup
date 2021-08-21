@@ -7,8 +7,7 @@ export default function NavTop2() {
         <div>
             <Navbar bg="light" expand="lg">
             <Container className="justify-content-center">
-                
-                
+                                
                 <Image src={logo} rounded style={{height:'50px'}} />
    
             </Container>

@@ -23,7 +23,7 @@ export default function FooterPage() {
 
           
           {/* <!-- Right --> */}
-          {/* <div>
+          <div>
             <a href="" className="me-4 text-reset">
               <i className="fab fa-facebook-f"></i>
             </a>
@@ -42,7 +42,7 @@ export default function FooterPage() {
             <a href="" className="me-4 text-reset">
               <i class="fab fa-github"></i>
             </a>
-          </div> */}
+          </div>
           {/* <!-- Right --> */}
         </section>
         {/* <!-- Section: Social media --> */}

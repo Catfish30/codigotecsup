@@ -4,6 +4,7 @@ import "../styles/styles.css";
 import axios from "axios";
 import md5 from "md5";
 import Cookies from 'universal-cookie';
+import Swal from "sweetalert2";
 
 // import { Link } from "react-router-dom";
 
@@ -41,7 +42,7 @@ class LoginView extends Component {
             
             return response.data;
         })
-        .then(response=>{
+        .then(async response=>{
           if(response.length>0){
             let respuesta=response[0]
             cookies.set('id', respuesta.id, {path:"/"} )
@@ -49,11 +50,21 @@ class LoginView extends Component {
             cookies.set('apellido_materno', respuesta.apellido_materno, {path: "/"});
             cookies.set('nombre', respuesta.nombre, {path: "/"});
             cookies.set('username', respuesta.username, {path: "/"});
-            alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido_paterno}`)
+            await Swal.fire({
+              icon:'success',
+              title:`Bienvenido ${respuesta.nombre} ${respuesta.apellido_paterno}`,
+              showConfirmButton:false,
+              timer:2000
+            })
             window.location.href="/login/admin"
-
+            
         }else{
-            alert('El usuario o la contraseña no son correctos');
+          await Swal.fire({
+            icon:'error',
+            title:`El usuario o la contraseña no son correctos`,
+            showConfirmButton:false,
+            timer:2000
+          })
         }
         })
         .catch(error => {
